@@ -1,0 +1,21 @@
+# INI File format
+
+[Time]
+command=date +%R
+interval=5
+color=#9b8d7f
+
+# This shows only the percentage
+[battery]
+helpScript=sh -c "$HOME/.local/bin/battery"
+command=$helpScript | grep -m 1 "%" | rev | cut -d ' ' -f1 | rev
+interval=10
+color=#9b8d7f
+
+[wetter]
+helpScript1=sh -c "weather"
+command=$helpScript1
+interval=10
+color=#9b8d7f
+
+

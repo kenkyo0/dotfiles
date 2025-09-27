@@ -1,0 +1,18 @@
+#!/bin/bash
+loc=$(cat "$HOME/.local/bin/location")
+firstry=$(curl -s "wttr.in/${loc}?T" | grep -m 1 "°C" | awk '{print $(NF-1) $NF}')
+number=$(echo "${firstry}" | sed -E 's/^([+-]?[0-9]+).*$/\1/')
+if [[ -z "${number}" || ! "${number}" =~ ^[+-]?[0-9]+$ ]]; then
+    printf "🌡️ Error"
+    exit 1
+fi
+
+if (( number >= 19 )) ; then
+    printf "🌞 %s" "${firstry}"
+elif (( number < 19 && number >= 4 )) ; then
+    printf "🍃 %s" "${firstry}"
+elif (( number < 4 )) ; then
+    printf "🥶 %s" "${firstry}"
+else
+    printf "🌈 %s" "${firstry}"
+fi
