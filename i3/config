@@ -56,7 +56,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# Brightness control
+# Brightness control (install brightnessclt)
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -98,9 +98,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 # split in horizontal orientation
-#bindsym $mod+h split h
+bindsym $mod+s split h
 # split in vertical orientation
-#bindsym $mod+v split v
+bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
@@ -203,7 +203,7 @@ bindsym $mod+r mode "resize"
 
 # gaps
 # gap in/out
-gaps inner 6
+gaps inner 8
 gaps outer 4
 
 workspace 3 gaps horizontal 120
@@ -222,7 +222,7 @@ client.unfocused #222222 #222222 #9b8d7f #222222 #222222
 bar {
         status_command i3blocks
         position bottom
-        separator_symbol " | "
+        separator_symbol "      |       "
         colors{
             background #222222
             statusline #9b8d7f
