@@ -1,4 +1,5 @@
 # INI File format
+# ! make sure you've exported the .scripts in your used shell
 
 [Time]
 command=date +%R
@@ -7,15 +8,18 @@ color=#9b8d7f
 
 # This shows only the percentage
 [battery]
-helpScript=sh -c "scripts/battery"
-command=$helpScript | grep -m 1 "%" | rev | cut -d ' ' -f1 | rev
+command=~/.config/.scripts/battery | grep -m 1 "%" | rev | cut -d ' ' -f1 | rev
 interval=10
 color=#9b8d7f
 
 [weather]
-helpScript1=sh -c "scripts/weather"
-command=$helpScript1
+command=~/.config/.scripts/weather
 interval=10
 color=#9b8d7f
 
+# <-- new block here 
 
+[filler]
+command=echo '~/\\_/\\~      |'
+interval=1
+color=#9b8d7f
