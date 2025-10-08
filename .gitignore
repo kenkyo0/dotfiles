@@ -1,0 +1,9 @@
+*
+!*/
+!/nvim/**
+!/zathura/**
+!/i3/**
+!/i3blocks/**
+!/.gitignore
+!/.scripts/**
+/.scripts/location/
