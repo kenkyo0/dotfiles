@@ -6,4 +6,5 @@
 !/i3blocks/**
 !/.gitignore
 !/.scripts/**
+!/alacritty/**
 /.scripts/location/
