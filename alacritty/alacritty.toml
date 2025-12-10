@@ -3,14 +3,15 @@ general.import = [
 ]
 
 [window]
-#opacity = 0.92 # not used because of niri
-decorations = "None"
+opacity = 0.95 # not used because of niri
+decorations = "Buttonless"
+padding = { x = 8, y = 8 }
 
 [scrolling]
 history = 11000
 
 [font]
-normal = { family = "monospace", style = "regular" }
+normal = { family = "MesloLGLDZ Nerd Font", style = "Regular" }
 size = 14.00
 
 [cursor]
@@ -18,5 +19,3 @@ style = { shape = "Block", blinking = "Never" }
 
 [mouse]
 hide_when_typing = true
-
-
