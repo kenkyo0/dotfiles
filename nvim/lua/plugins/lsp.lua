@@ -28,24 +28,8 @@ return {
         lazy = false,
         config = function()
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
-            local lspconfig = require("lspconfig")
-
-            lspconfig.lua_ls.setup({
-                capabilities = capabilities,
-            })
-            lspconfig.clangd.setup({
-                capabilities = capabilities,
-            })
-            --lspconfig.texlab.setup({
-            --    capabilities = capabilities,
-            --})
-            lspconfig.pyright.setup({
-                capabilities = capabilities,
-            })
-            --lspconfig.zk.setup({  --no need to because i got zk-cli
-            --    capabilities = capabilities,
-            --})
-
+            vim.lsp.enable('lua_ls', 'pyright', 'clangd', 'bash_lanuage_server') -- zk, texlab
+            -- binds 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
             vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})

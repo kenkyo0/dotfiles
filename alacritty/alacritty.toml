@@ -11,8 +11,8 @@ padding = { x = 8, y = 8 }
 history = 11000
 
 [font]
-normal = { family = "MesloLGLDZ Nerd Font", style = "Regular" }
-size = 14.00
+normal = { family = "Iosevka Nerd Font", style = "Regular" }
+size = 16.00
 
 [cursor]
 style = { shape = "Block", blinking = "Never" }
