@@ -35,7 +35,8 @@ gaps left 15
 
 # border
 
-default_border none
+default_border pixel 3
+client.focused #b2f7d8 #b2f7d8 #ffffff
 
 ### Idle configuration
 #
@@ -228,12 +229,13 @@ bar {
     height 36
     font "Iosevka_Nerd_Font Regular Book 16"
     # When the status_command prints a new line to stdout, swaybar updates.
-    status_command while ~/.config/sway/status.sh 2> ./errorlog.txt; do sleep 1; done
-
+    status_command while ~/.config/sway/status.sh 2> errorlog.txt; do sleep 1; done
+    strip_workspace_numbers yes
+    workspace_min_width 30
     colors {
-        statusline #ffffff
+        statusline #fff0de
         background #262320
-        focused_workspace #754343 #291919 #cfb7b0
+        focused_workspace #754343 #291919 #fff0de
         inactive_workspace #32323200 #291919 #5c5c5c
     }
 }
