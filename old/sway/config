@@ -18,7 +18,7 @@ set $browser firefox
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/bg/collage_blackbw.png fill
+output * bg ~/Pictures/bg/panes.png fill
 #
 # Example configuration:
 #
