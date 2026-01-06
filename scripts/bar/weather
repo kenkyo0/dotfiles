@@ -1,7 +1,30 @@
 #!/bin/bash
+helper=/tmp
 loc=$(cat "$HOME/.config/.scripts/location")
 firstry=$(curl -s "wttr.in/${loc}?T" | grep -m 1 "°C" | awk '{print $(NF-1) $NF}')
 number=$(echo "${firstry}" | sed -E 's/^([+-]?[0-9]+).*$/\1/')
+
+# to solve weather errors or refresh time gaps (not used here)
+weather_cache()
+{   
+    local weather_new
+    weather_new=$(weather)
+
+    if [[ -n "$weather_new" ]]; then
+        echo "${weather_new}" > ${helper}/weather_old.txt
+        echo "$weather_new"
+    else
+        # checking cache file // -s checks if the file is available and bigger than 0
+        if [[ -s "$(cat ${helper}/weather_old.txt)" ]]; then
+            echo '...'   
+        else
+        # use cache
+            cat ${helper}/weather_old.txt
+        fi
+    fi
+}
+#
+
 if [[ -z "${number}" || ! "${number}" =~ ^[+-]?[0-9]+$ ]]; then
     printf "🌡️ Error"
     exit 1
