@@ -5,9 +5,10 @@
 !/i3/**
 !/i3blocks/**
 !/.gitignore
-!/.scripts/**
+!/scripts/**
 !/old/**
 !/aerospace/**
 !/alacritty/**
 !/mango/**
+!/waybar/**
 /scripts/bar/location/
