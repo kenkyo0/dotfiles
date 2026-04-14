@@ -5,7 +5,11 @@ vim.opt.relativenumber = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.opt.wrap = false
+-- for line fitting in windows size
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.textwidth = 0 -- optional, as it's often the default
+
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 4

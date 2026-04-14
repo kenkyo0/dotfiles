@@ -28,8 +28,9 @@ return {
         lazy = false,
         config = function()
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
-            vim.lsp.enable('lua_ls', 'pyright', 'clangd', 'bash_lanuage_server') -- zk, texlab
-            -- binds 
+
+            vim.lsp.enable('lua_ls', 'pyright', 'clangd', 'bash_lanuage_server') -- zk, texlab binds 
+
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
             vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
