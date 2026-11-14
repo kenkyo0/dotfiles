@@ -1,0 +1,21 @@
+general.import = [
+"alacritty-theme/themes/gruvbox_material_hard_dark.toml",
+]
+
+[window]
+opacity = 0.95 # not used because of niri
+decorations = "Buttonless"
+padding = { x = 8, y = 8 }
+
+[scrolling]
+history = 11000
+
+[font]
+normal = { family = "Iosevka Nerd Font", style = "Regular" }
+size = 16.00
+
+[cursor]
+style = { shape = "Block", blinking = "Never" }
+
+[mouse]
+hide_when_typing = true

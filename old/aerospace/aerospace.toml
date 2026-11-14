@@ -1,0 +1,74 @@
+config-version = 2
+
+# In i3, all workspaces are phantom
+persistent-workspaces = ["1",
+
+ "2", "3", "4", "5"]
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# Mouse follows focus when focused monitor changes
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+[gaps]
+    inner.horizontal = 3
+    inner.vertical =   3
+    outer.left =       2
+    outer.bottom =     2
+    outer.top =        2
+    outer.right =      2
+
+[mode.main.binding]
+    # See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
+    alt-d = 'exec-and-forget open -n /System/Applications/Launchpad.app'
+    alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
+
+    alt-shift-s = 'exec-and-forget screencapture -i -c'
+
+
+    # i3 wraps focus by default
+    alt-j =         'focus --boundaries-action wrap-around-the-workspace left'
+    alt-k =         'focus --boundaries-action wrap-around-the-workspace down'
+    alt-l =         'focus --boundaries-action wrap-around-the-workspace up'
+    alt-semicolon = 'focus --boundaries-action wrap-around-the-workspace right'
+
+    alt-shift-j = 'move left'
+    alt-shift-k = 'move down'
+    alt-shift-l = 'move up'
+    alt-shift-semicolon = 'move right'
+
+    alt-h = 'join-with down'
+    alt-v = 'join-with left'
+
+    alt-f = 'fullscreen'
+
+    alt-s = 'layout v_accordion' # 'layout stacking' in i3
+    alt-w = 'layout h_accordion' # 'layout tabbed' in i3
+    alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
+
+    alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
+
+    alt-1 = 'workspace 1'
+    alt-2 = 'workspace 2'
+    alt-3 = 'workspace 3'
+    alt-4 = 'workspace 4'
+    alt-5 = 'workspace 5'
+
+    alt-shift-1 = 'move-node-to-workspace 1'
+    alt-shift-2 = 'move-node-to-workspace 2'
+    alt-shift-3 = 'move-node-to-workspace 3'
+    alt-shift-4 = 'move-node-to-workspace 4'
+    alt-shift-5 = 'move-node-to-workspace 5'
+
+    alt-shift-c = 'reload-config'
+
+    alt-r = 'mode resize'
+
+[mode.resize.binding]
+    h = 'resize width -50'
+    j = 'resize height +50'
+    k = 'resize height -50'
+    l = 'resize width +50'
+    enter = 'mode main'
+    esc = 'mode main'
